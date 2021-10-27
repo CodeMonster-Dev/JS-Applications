@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detect Pressed Key in JavaScript | Programming With Husnain</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+        <p class="text">Press any key</p>
+        <div class="content">
+            <div class="key-code"></div>
+            <div class="key-name"></div>
+            <div class="details">
+                <p class="key">Key: <span></span></p>
+                <p class="code">Code: <span></span></p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const box = document.querySelector(".box");
+    document.addEventListener("keydown", e =>{
+        let keyName = e.keyCode === 32 ? "Space" : e.key;
+        box.querySelector(".key-code").innerHTML = e.keyCode;
+        box.querySelector(".key-name").innerHTML = keyName.toUpperCase();
+        box.querySelector(".key span").innerHTML = keyName;
+        box.querySelector(".code span").innerHTML = e.keyCode;
+        box.classList.add("active");
+        console.log(e);
+    })
+</script>
+</html>
